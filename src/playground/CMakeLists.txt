@@ -24,7 +24,7 @@ set(PROJECT_FILES
 
 # Generate an obj file, that can be used to build static and shared libraries
 add_library(playground_obj OBJECT ${PROJECT_FILES})
-target_compile_options(playground_obj PUBLIC ${EXTRA_COMPILATION_FLAGS})
+target_compile_options(playground_obj PRIVATE ${EXTRA_COMPILATION_FLAGS})
 
 # Runs Cppcheck on the obj library if in Debug mode
 if(${CMAKE_BUILD_TYPE} STREQUAL Debug)

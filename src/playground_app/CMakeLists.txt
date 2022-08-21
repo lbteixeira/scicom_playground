@@ -10,7 +10,7 @@ include(GetGLFW)
 add_library(playground_app_static STATIC
   gui_manager.cpp
 )
-target_compile_options(playground_app_static PUBLIC ${EXTRA_COMPILATION_FLAGS})
+target_compile_options(playground_app_static PRIVATE ${EXTRA_COMPILATION_FLAGS})
 
 # Include directories for the business logic related library
 target_include_directories(playground_app_static PUBLIC include)
