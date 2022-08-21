@@ -15,7 +15,7 @@
 * [Tools and Dependencies](#tools_dependencies)
    * [Tools](#tools)
    * [Dependencies](#dependencies)
-* [Installation](#install)
+* [Build and Install](#install)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -148,9 +148,13 @@ At the moment, the libraries available are:
 * [GLFW](https://www.glfw.org/): a multi-platform library for OpenGL development, that provides a simple API for creating windows, contexts and surfaces.
 * [OpenCV](https://opencv.org/): a computer vision library, used here for its image manipulation capabilities.
 
-## Installation <a name="install"></a>
+## Build and Install <a name="install"></a>
 
-Describe how to compile/install the project.
+To build the debug and release versions, run `make debug` and `make release`,
+respectively. To build and run the tests, run `make test`. As previously
+described, the `Makefile` is provided only for convenience, and it actually
+runs CMake commands. Edit this file as necessary for your particular project.
+
 
 ## Contributing <a name="contributing"></a>
 
