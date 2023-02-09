@@ -1,7 +1,4 @@
-# Although only v3.16 is required, v3.20 or higher is recommended, since it has
-# the option --test-dir for ctest (see Makefile). This is only a convenience to
-# run the tests from the root directory.
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.20.0)
 
 project(playground VERSION 0.0.1 LANGUAGES CXX)
 
