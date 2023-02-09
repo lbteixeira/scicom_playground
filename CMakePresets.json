@@ -27,6 +27,15 @@
       }
     },
     {
+      "name": "lt",
+      "displayName": "Linux Debug (dev) with tests",
+      "description": "Debug configuration for Linux with unit tests",
+      "inherits": "ld",
+      "cacheVariables": {
+        "PLAYGROUND_BUILD_TESTS": "ON"
+      }
+    },
+    {
       "name": "lr",
       "displayName": "Linux Release",
       "description": "Release configuration for Linux",
@@ -51,6 +60,13 @@
       "description": "Release build for Linux",
       "configurePreset": "ld",
       "jobs": 4
+    },
+    {
+      "name": "valgrind",
+      "displayName": "Valgrind",
+      "description": "Runs valgrind in the tests",
+      "configurePreset": "lt",
+      "targets": "memcheck-playground_tests"
     }
   ]
 }
