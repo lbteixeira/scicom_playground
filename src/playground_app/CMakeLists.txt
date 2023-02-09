@@ -26,4 +26,6 @@ Format(playground_app .)
 AddMemcheck(playground_app)
 
 # Create the documentation target
-Doxygen(playground_app src/CMakeLists.txt)
+if(PLAYGROUND_BUILD_DOC)
+  Doxygen(playground_app src/CMakeLists.txt)
+endif()
