@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "ld",
+      "displayName": "Linux Debug (dev)",
+      "description": "Debug configuration for Linux",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "1"
+      }
+    },
+    {
+      "name": "ld-doc",
+      "displayName": "Linux Debug (dev) with Doxygen documentation",
+      "description": "Debug configuration for Linux with Doxygen documentation",
+      "inherits": "ld",
+      "cacheVariables": {
+        "PLAYGROUND_BUILD_DOC": "ON"
+      }
+    },
+    {
+      "name": "lr",
+      "displayName": "Linux Release",
+      "description": "Release configuration for Linux",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "ld",
+      "displayName": "Linux Debug (dev)",
+      "description": "Debug build for Linux",
+      "configurePreset": "ld",
+      "jobs": 4
+    },
+    {
+      "name": "lr",
+      "displayName": "Linux Release",
+      "description": "Release build for Linux",
+      "configurePreset": "ld",
+      "jobs": 4
+    }
+  ]
+}
