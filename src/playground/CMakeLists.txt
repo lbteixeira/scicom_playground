@@ -47,6 +47,16 @@ target_include_directories(playground_obj PUBLIC
 add_library(playground_static STATIC)
 target_link_libraries(playground_static playground_obj)
 
+# Copy the compile_commands file to the project's root during build time. Only
+# executed if the file is exported during configuration time.
+if(CMAKE_EXPORT_COMPILE_COMMANDS)
+add_custom_command(
+  TARGET playground_static
+  COMMAND ${CMAKE_COMMAND}
+  ARGS -E copy ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR}
+  )
+endif()
+
 # Formats the source files according to the style defined by .clang-format
 Format(playground_static .)
 
