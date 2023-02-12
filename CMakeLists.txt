@@ -11,6 +11,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 include(NoInSourceBuilds)
 
+# Utilities
+include(CppCheck)
+include(Format)
+include(Doxygen)
+include(Memcheck)
+
+# Dependencies
+include(GetEigen)
+include(GetBlaze)
+#include(GetOpenCV)
+include(GetMatplotPlusPlus)
+include(GetGLFW)
+
+# Used when OpenCV is included via vcpkg
+find_package(OpenCV CONFIG REQUIRED)
+
 add_subdirectory(src)
 
 if(PLAYGROUND_BUILD_TESTS)

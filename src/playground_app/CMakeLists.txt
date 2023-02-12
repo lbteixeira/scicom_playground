@@ -1,10 +1,3 @@
-# Utilities
-include(Format)
-include(Memcheck)
-
-# Dependencies
-include(GetGLFW)
-
 # Create the library target associated with the application business logic.
 # The file containing the main function shouldn't be included in the library.
 add_library(playground_app_static STATIC
@@ -22,6 +15,7 @@ target_link_libraries(playground_app_static PUBLIC
 
 add_executable(playground_app main.cpp)
 target_link_libraries(playground_app playground_app_static)
+
 Format(playground_app .)
 AddMemcheck(playground_app)
 

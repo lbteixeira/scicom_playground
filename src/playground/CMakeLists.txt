@@ -1,14 +1,3 @@
-# Utilities
-include(CppCheck)
-include(Format)
-include(Doxygen)
-
-# Dependencies
-include(GetEigen)
-include(GetBlaze)
-include(GetOpenCV)
-include(GetMatplotPlusPlus)
-
 # Non-default compilation flags
 set(EXTRA_COMPILATION_FLAGS
   -Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion
