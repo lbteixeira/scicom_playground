@@ -14,7 +14,9 @@
       "binaryDir": "${sourceDir}/build/debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "1"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+        "PLAYGROUND_BUILD_TESTS": "ON",
+        "CMAKE_TOOLCHAIN_FILE": "external/vcpkg/scripts/buildsystems/vcpkg.cmake"
       }
     },
     {
@@ -24,15 +26,6 @@
       "inherits": "ld",
       "cacheVariables": {
         "PLAYGROUND_BUILD_DOC": "ON"
-      }
-    },
-    {
-      "name": "lt",
-      "displayName": "Linux Debug (dev) with tests",
-      "description": "Debug configuration for Linux with unit tests",
-      "inherits": "ld",
-      "cacheVariables": {
-        "PLAYGROUND_BUILD_TESTS": "ON"
       }
     },
     {
@@ -65,7 +58,14 @@
       "name": "valgrind",
       "displayName": "Valgrind",
       "description": "Runs valgrind in the tests",
-      "configurePreset": "lt",
+      "configurePreset": "ld",
+      "targets": "memcheck-playground_tests"
+    },
+    {
+      "name": "valgrind-app",
+      "displayName": "Valgrind",
+      "description": "Runs valgrind in the tests",
+      "configurePreset": "ld",
       "targets": "memcheck-playground_tests"
     }
   ]
