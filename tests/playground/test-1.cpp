@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <utility>
 
 #include "playground/blaze.hpp"
 #include "playground/eigen.hpp"
@@ -32,3 +33,7 @@ TEST_CASE("Blaze") {
   REQUIRE(result[1] == expected[1]);
   REQUIRE(result[2] == expected[2]);
 }
+
+TEST_CASE("MemoryLeak") {
+  REQUIRE(MemoryLeak() == 5);
+};

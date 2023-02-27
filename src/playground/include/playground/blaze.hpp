@@ -3,3 +3,4 @@
 #include "blaze/math/DynamicVector.h"
 
 blaze::DynamicVector<int> sumVectors();
+int MemoryLeak();

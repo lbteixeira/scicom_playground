@@ -19,3 +19,10 @@ blaze::DynamicVector<int> sumVectors() {
   blaze::DynamicVector<int> c = a + b;
   return c;
 }
+
+int MemoryLeak() {
+  auto r = new std::pair(1, 2);
+  auto b = std::pair(1, 3);
+  auto c = r->second + b.second;
+  return c;
+}
