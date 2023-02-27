@@ -68,5 +68,14 @@
       "configurePreset": "ld",
       "targets": "memcheck-playground_tests"
     }
+  ],
+  "testPresets": [
+    {
+      "name": "ld",
+      "configurePreset": "ld",
+      "output": {"outputOnFailure": true},
+      "execution": {
+      }
+    }
   ]
 }
