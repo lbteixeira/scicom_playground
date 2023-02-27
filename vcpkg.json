@@ -7,5 +7,6 @@
     "blaze",
     "matplotplusplus",
     "glfw3",
+    "catch2"
   ]
 }

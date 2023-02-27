@@ -19,5 +19,8 @@ target_link_libraries(playground_tests
   ${BLAZE_TARGET}
 )
 
-catch_discover_tests(playground_tests)
+include(Catch)
+catch_discover_tests(playground_tests
+                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                     )
 AddMemcheck(playground_tests)

@@ -1,4 +1,3 @@
-include(Testing)
+find_package(Catch2 CONFIG REQUIRED)
 
 add_subdirectory(playground)
-#add_subdirectory(ltracing)
