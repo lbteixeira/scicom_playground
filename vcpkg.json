@@ -2,6 +2,10 @@
   "name": "playground",
   "version-string": "1.0.0",
   "dependencies": [
-    "opencv"
+    "opencv",
+    "eigen3",
+    "blaze",
+    "matplotplusplus",
+    "glfw3",
   ]
 }
