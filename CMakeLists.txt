@@ -17,18 +17,24 @@ include(Format)
 include(Doxygen)
 include(Memcheck)
 
-# Dependencies
-include(GetEigen)
-include(GetBlaze)
+# Used when the dependencies are included via include FetchContent
+#include(GetEigen)
+#include(GetBlaze)
 #include(GetOpenCV)
-include(GetMatplotPlusPlus)
-include(GetGLFW)
+#include(GetMatplotPlusPlus)
+#include(GetGLFW)
 
-# Used when OpenCV is included via vcpkg
+# Used when the dependencies are included via vcpkg
+find_package(Eigen3 CONFIG REQUIRED)
+find_package(blaze CONFIG REQUIRED)
+find_package(Eigen3 CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
+find_package(Matplot++ CONFIG REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
 
 add_subdirectory(src)
 
+include(CTest)
 if(PLAYGROUND_BUILD_TESTS)
   add_subdirectory(tests)
 endif()

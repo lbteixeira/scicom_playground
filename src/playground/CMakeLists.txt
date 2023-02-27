@@ -22,9 +22,9 @@ endif()
 
 # Linking the dependencies to the obj library
 target_link_libraries(playground_obj PRIVATE
-  ${EIGEN_TARGET}
-  ${BLAZE_TARGET}
-  ${MATPLOT_TARGET}
+  Eigen3::Eigen
+  blaze::blaze
+  Matplot++::matplot
   ${OpenCV_LIBS}
 )
 
