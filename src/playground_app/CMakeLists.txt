@@ -11,6 +11,7 @@ target_include_directories(playground_app_static PUBLIC include)
 target_link_libraries(playground_app_static PUBLIC
   playground_static
   glfw
+  #Matplot++::cimg Matplot++::matplot Matplot++::nodesoup
 )
 
 add_executable(playground_app main.cpp)
