@@ -15,7 +15,9 @@ include(NoInSourceBuilds)
 include(CppCheck)
 include(Format)
 include(Doxygen)
-include(Memcheck)
+if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+  include(Memcheck)
+endif()
 
 # Used when the dependencies are included via include FetchContent
 #include(GetEigen)

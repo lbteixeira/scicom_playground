@@ -17,8 +17,10 @@ target_link_libraries(playground_app_static PUBLIC
 add_executable(playground_app main.cpp)
 target_link_libraries(playground_app playground_app_static)
 
-Format(playground_app .)
-AddMemcheck(playground_app)
+if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+  Format(playground_app .)
+  AddMemcheck(playground_app)
+endif()
 
 # Create the documentation target
 if(PLAYGROUND_BUILD_DOC)

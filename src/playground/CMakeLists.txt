@@ -12,11 +12,12 @@ add_library(playground_obj OBJECT ${PROJECT_FILES})
 if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
   set(EXTRA_COMPILATION_FLAGS
       -Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion)
-target_compile_options(playground_obj PRIVATE ${EXTRA_COMPILATION_FLAGS})
+  target_compile_options(playground_obj PRIVATE ${EXTRA_COMPILATION_FLAGS})
 endif()
 
 # Runs Cppcheck on the obj library if in Debug mode
-if(${CMAKE_BUILD_TYPE} STREQUAL Debug)
+if(${CMAKE_BUILD_TYPE} STREQUAL Debug AND
+   ${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
   AddCppCheck(playground_obj)
 endif()
 
@@ -46,7 +47,9 @@ add_custom_command(
 endif()
 
 # Formats the source files according to the style defined by .clang-format
-Format(playground_static .)
+if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+  Format(playground_static .)
+endif()
 
 # Create the documentation target
 if(PLAYGROUND_BUILD_DOC)
