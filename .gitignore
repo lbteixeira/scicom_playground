@@ -1,6 +1,8 @@
 build/
 Testing/
 cmake/opencv
+.vimspector.json
+.vscode
 
 .cache
 compile_commands.json
@@ -37,5 +39,3 @@ compile_commands.json
 *.exe
 *.out
 *.app
-
-.vimspector.json
