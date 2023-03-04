@@ -1,8 +1,3 @@
-# Non-default compilation flags
-set(EXTRA_COMPILATION_FLAGS
-  -Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion
-)
-
 # Files that have to be compiled
 set(PROJECT_FILES
   eigen.cpp
@@ -12,7 +7,13 @@ set(PROJECT_FILES
 
 # Generate an obj file that can be used to build static and shared libraries
 add_library(playground_obj OBJECT ${PROJECT_FILES})
+
+# Non-default compilation flags
+if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+  set(EXTRA_COMPILATION_FLAGS
+      -Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion)
 target_compile_options(playground_obj PRIVATE ${EXTRA_COMPILATION_FLAGS})
+endif()
 
 # Runs Cppcheck on the obj library if in Debug mode
 if(${CMAKE_BUILD_TYPE} STREQUAL Debug)
@@ -22,7 +23,6 @@ endif()
 # Linking the dependencies to the obj library
 target_link_libraries(playground_obj PRIVATE
   Eigen3::Eigen
-  blaze::blaze
   Matplot++::matplot
   ${OpenCV_LIBS}
 )
