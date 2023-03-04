@@ -2,9 +2,11 @@
   "name": "playground",
   "version-string": "1.0.0",
   "dependencies": [
-    "opencv",
+    {
+      "name": "opencv",
+      "platform": "!mingw"
+    },
     "eigen3",
-    "blaze",
     "matplotplusplus",
     "glfw3",
     "catch2"
