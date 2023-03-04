@@ -16,7 +16,7 @@ target_link_libraries(playground_tests
 
   Catch2::Catch2WithMain
   Eigen3::Eigen
-  ${BLAZE_TARGET}
+  # ${BLAZE_TARGET}
 )
 
 include(Catch)

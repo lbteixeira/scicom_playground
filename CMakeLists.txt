@@ -19,14 +19,11 @@ include(Memcheck)
 
 # Used when the dependencies are included via include FetchContent
 #include(GetEigen)
-#include(GetBlaze)
 #include(GetOpenCV)
 #include(GetMatplotPlusPlus)
 #include(GetGLFW)
 
 # Used when the dependencies are included via vcpkg
-find_package(Eigen3 CONFIG REQUIRED)
-find_package(blaze CONFIG REQUIRED)
 find_package(Eigen3 CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
 find_package(Matplot++ CONFIG REQUIRED)

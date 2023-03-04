@@ -1,7 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 #include <utility>
 
-#include "playground/blaze.hpp"
+// #include "playground/blaze.hpp"
 #include "playground/eigen.hpp"
 
 TEST_CASE("Test case 1", "[tag1]") {
@@ -23,17 +23,3 @@ TEST_CASE("Eigen") {
 
   REQUIRE(m == populateMatrix(size, value));
 }
-
-TEST_CASE("Blaze") {
-  auto result = sumVectors();
-
-  const blaze::DynamicVector<int> expected{6, 3, 2};
-
-  REQUIRE(result[0] == expected[0]);
-  REQUIRE(result[1] == expected[1]);
-  REQUIRE(result[2] == expected[2]);
-}
-
-TEST_CASE("MemoryLeak") {
-  REQUIRE(MemoryLeak() == 5);
-};

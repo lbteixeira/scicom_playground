@@ -6,7 +6,6 @@ set(EXTRA_COMPILATION_FLAGS
 # Files that have to be compiled
 set(PROJECT_FILES
   eigen.cpp
-  blaze.cpp
   opencv.cpp
   matplot.cpp
 )
