@@ -19,7 +19,10 @@ target_link_libraries(playground_app playground_app_static)
 
 if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
   Format(playground_app .)
-  AddMemcheck(playground_app)
+endif()
+
+if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL Windows)
+  AddMemcheck(playground_tests)
 endif()
 
 # Create the documentation target

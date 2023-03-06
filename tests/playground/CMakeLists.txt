@@ -21,5 +21,8 @@ catch_discover_tests(playground_tests
 
 if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
   Format(playground_tests .)
+endif()
+
+if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL Windows)
   AddMemcheck(playground_tests)
 endif()

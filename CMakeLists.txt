@@ -15,7 +15,7 @@ include(NoInSourceBuilds)
 include(CppCheck)
 include(Format)
 include(Doxygen)
-if(${CMAKE_CXX_COMPILER_ID} STREQUAL GNU)
+if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL Windows)
   include(Memcheck)
 endif()
 
